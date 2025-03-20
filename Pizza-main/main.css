@@ -59,17 +59,9 @@
 
     /* Efeito ao passar o mouse sobre os links */
     header nav ul li a:hover {
-        background-color: #FF6347;
-        /* Cor do fundo ao passar o mouse */
         color: rgb(255, 255, 255);
-        /* Cor do texto ao passar o mouse */
         transform: translateY(-3px);
-        /* Leve elevação sem mover para os lados */
-        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
-        /* Sombra mais suave */
         border-radius: 50px;
-        /* Mantém as bordas arredondadas */
-        /* Remover width para evitar distorção, o padding cuida da largura */
     }
 
     /* Seções */
@@ -133,18 +125,16 @@
     }
 
     button:hover {
-        background-color: rgb(255, 99, 71);
-
+        background: linear-gradient(20deg, rgba(255, 99, 71, 0.116), rgba(255, 217, 0, 0.425));
     }
 
     button.prev {
         left: 15px;
     }
-
+    
     button.next {
         right: 15px;
     }
-
 
     #Cadastro form {
         max-width: 600px;
@@ -223,8 +213,7 @@
         display: block;
     }
 
-    #Cadastroc input,
-    #Cadastroc textarea {
+    #Cadastroc input {
         width: 100%;
         padding: 10px;
         font-size: 1rem;
@@ -232,18 +221,16 @@
         border-radius: 5px;
     }
 
-    #Cadastroc button {
-        padding: 10px 30px;
-        background-color: #FF6347;
-        color: white;
-        border: none;
+    #Cadastroc textarea {
+        width: 100%;
+        height: 60px;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
         border-radius: 5px;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        width: 10%;
-        margin-top: 190px;
-        margin-left: -100px;
     }
+
+
 
     #Cadastro button {
         padding: 10px 30px;
@@ -258,17 +245,23 @@
         margin-left: 220px;
     }
 
+    #Cadastroc button,
     #Cadastrop button {
-        padding: 10px 30px;
+        padding: 10px ;
         background-color: #FF6347;
         color: white;
         border: none;
         border-radius: 5px;
         font-size: 1.1rem;
         transition: all 0.3s ease;
-        width: 10%;
-        margin-top: 155px;
-        margin-left: -100px;
+        width: 20%; 
+        margin-top: 245px; 
+        margin-left: 110px; 
+    }
+    
+    #Cadastroc button:hover,
+    #Cadastrop button:hover {
+        background-color: #f7320f;
     }
 
     #Cadastroc button:hover {
@@ -282,6 +275,25 @@
     #Cadastrop button:hover {
         background-color: #f7320f;
     }
+
+        /* Botões dentro dos formulários */
+        form button, form .botao {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 30px;
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+    
+        form button:hover, form .botao:hover {
+            background-color: #f7320f;
+        }
 
     /* Divisões */
     #divisao {
@@ -353,7 +365,6 @@
         overflow: hidden;
         border-radius: 10px;
         height: 600px;
-        /* Altura menor do carrossel */
         margin-top: -20px;
     }
 
@@ -369,11 +380,8 @@
         display: block;
         width: 100%;
         height: 80%;
-        /* Ajustando a altura da imagem */
         object-fit: cover;
-        /* Garante que a imagem se ajuste sem distorcer */
         object-position: top center;
-        /* Mover a imagem um pouco para cima */
     }
 
 
@@ -383,7 +391,6 @@
         position: absolute;
         top: 50%;
         background-color: rgba(255, 99, 71, 0.301);
-        /* Fundo com transparência */
         color: white;
         border: none;
         padding: 15px;
@@ -510,4 +517,57 @@
 
     .risco {
         margin-top: -15px;
+    }
+
+    @media (max-width: 768px) {
+        header nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header nav ul li {
+            margin: 10px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        .carousel-container {
+            height: 400px;
+        }
+
+        button, .botao {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header {
+            height: auto;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header .logo .logoimg {
+            height: 80px;
+            width: 120px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+        }
+
+        section p {
+            font-size: 1rem;
+        }
+
+        button, .botao {
+            width: 100%;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
     }
